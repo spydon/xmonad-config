@@ -21,6 +21,8 @@ main = do
     }
       `additionalKeys`
            [ ((mod1Mask, xK_p), spawn "dmenu_run -fn 'Droid Sans Mono-10'")
+           , ((mod1Mask, xK_n), spawn "mpc next")
+           , ((mod1Mask, xK_r), spawn "mpc clear | mpc listall | shuf -n 10 | mpc add; mpc play")
            , ((mod1Mask, xK_Right), spawn "pulseaudio-ctl up")
            , ((mod1Mask, xK_Left), spawn "pulseaudio-ctl down")
            , ((mod1Mask, xK_Up), spawn "xbacklight +10")
