@@ -1,5 +1,5 @@
 Config {
-    font = "xft:Monospace:pixelsize=20",
+    font = "xft:Monospace:pixelsize=12",
     allDesktops = True,
     commands = [
         Run MultiCpu       [ "--template" , "Cpu: <total0>% <total1>% <total2>% <total3>%"
@@ -14,7 +14,7 @@ Config {
         Run DynNetwork [] 100,
         Run MPD ["-t",
                   "<artist>: <title> (<album>) <state>", -- <remaining>
-                            "--", "-P", ">>", "-Z", "|", "-S", "><"] 200,
+                            "--", "-P", ">>", "-Z", "|", "-S", "><"] 30,
         Run StdinReader,
         Run Battery        [ "--template" , "Batt: <acstatus>"
                              , "--Low"      , "10"        -- units: %
