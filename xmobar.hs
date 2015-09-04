@@ -11,7 +11,7 @@ Config {
                              ] 100,
         Run Memory ["-t","Mem: <usedratio>%"] 100,
         Run Date "%a %b %_d %H:%M" "date" 600,
-        Run DynNetwork [] 100,
+        Run DynNetwork [] 50,
         Run MPD ["-t",
                   "<artist>: <title> (<album>) <state>", -- <remaining>
                             "--", "-P", ">>", "-Z", "|", "-S", "><"] 30,

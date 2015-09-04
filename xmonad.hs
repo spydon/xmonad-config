@@ -31,8 +31,9 @@ main = do
       `additionalKeys`
            [ ((mod4Mask, xK_p), spawn "dmenu_run -fn 'Droid Sans Mono-10'")
            , ((mod4Mask, xK_b), spawn background)
+           , ((mod4Mask, xK_c), spawn "urxvt -e tty-clock")
            , ((mod4Mask, xK_x), spawn "urxvt -e ncmpcpp")
-           , ((mod4Mask, xK_w), spawn "urxvt -e sudo wifi-menu")
+           , ((mod4Mask, xK_w), spawn "urxvt -e sudo iwlist scanning && sudo wifi-menu")
            , ((mod4Mask, xK_n), spawn "nautilus")
            , ((mod4Mask, xK_f), spawn "firefox")
            , ((mod4Mask, xK_s), spawn "sh ~/scripts/screen.sh")
