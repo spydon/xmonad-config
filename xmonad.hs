@@ -8,13 +8,16 @@ import XMonad.Layout.Gaps
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
+import XMonad.Util.EZConfig
 
-background = "feh --bg-fill ~/Pictures/`ls ~/Pictures | shuf -n 1`"
+background = "feh --bg-fill ~/pictures/`ls ~/pictures | shuf -n 1`"
+--myWorkspaces =    ["1:Browser", "2:Slack", "3:LaTeX", "4:IntelliJ"] 
+--               ++ ["5:Webstorm", "6:IRC", "7:Notes",  "8", "9",  "0"]
 
 main = do
-  --xmproc <- spawnPipe "~/.cabal/bin/xmobar2 ~/.xmonad/xmobar.hs"
   xmproc <- spawnPipe "~/.cabal/bin/xmobar ~/.xmonad/xmobar.hs"
   spawn background
+
   xmonad $ defaultConfig
     { terminal = "urxvt"
     , manageHook = manageDocks <+> manageHook defaultConfig

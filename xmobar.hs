@@ -1,8 +1,9 @@
 Config {
     font = "xft:Monospace:pixelsize=12",
     allDesktops = True,
+    pickBroadest = True,   -- choose widest display (multi-monitor) 
     commands = [
-        Run MultiCpu       [ "--template" , "Cpu: <total0>% <total1>% <total2>% <total3>%"
+        Run MultiCpu       [ "--template" , "Cpu: <total0>% <total1>% <total2>% <total3>% <total4>% <total5>%"
                              , "--Low"      , "50"         -- units: %
                              , "--High"     , "85"         -- units: %
                              , "--low"      , "darkgreen"
@@ -15,24 +16,9 @@ Config {
         Run MPD ["-t",
                   "<artist>: <title> (<album>) <state>", -- <remaining>
                             "--", "-P", ">>", "-Z", "|", "-S", "><"] 30,
-        Run StdinReader,
-        Run Battery        [ "--template" , "Batt: <acstatus>"
-                             , "--Low"      , "10"        -- units: %
-                             , "--High"     , "80"        -- units: %
-                             , "--low"      , "darkred"
-                             , "--normal"   , "darkorange"
-                             , "--high"     , "darkgreen"
-
-                             , "--" -- battery specific options
-                                       -- discharging status
-                                       , "-o"	, "<left>% (<timeleft>)"
-                                       -- AC "on" status
-                                       , "-O"	, "<fc=#dAA520>Charging</fc>"
-                                       -- charged status
-                                       , "-i"	, "<fc=#006000>Charged</fc>"
-                           ] 100
-    ],
+        Run StdinReader],
     sepChar = "%",
     alignSep = "}{",
-    template = "%StdinReader%  Playing: %mpd% }{ %multicpu% | %dynnetwork% | %memory% | %battery% | <fc=#ee9a00>%date%</fc>"
+    template = "%StdinReader%  Playing: %mpd% }{Pages: %/home/spydon/scripts/printPages.sh% | Week: %/home/spydon/scripts/dateu.sh% | %multicpu% | %dynnetwork% | %memory% | <fc=#ee9a00>%date%</fc>"
 }
+
