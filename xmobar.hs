@@ -19,6 +19,6 @@ Config {
         Run StdinReader],
     sepChar = "%",
     alignSep = "}{",
-    template = "%StdinReader%  Playing: %mpd% }{Pages: %/home/spydon/scripts/printPages.sh% | Week: %/home/spydon/scripts/dateu.sh% | %multicpu% | %dynnetwork% | %memory% | <fc=#ee9a00>%date%</fc>"
+    template = "%StdinReader%  Playing: %mpd% }{ %multicpu% | %dynnetwork% | %memory% | <fc=#ee9a00>%date%</fc>"
 }
 
