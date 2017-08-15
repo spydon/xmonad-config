@@ -13,12 +13,21 @@ Config {
         Run Memory ["-t","Mem: <usedratio>%"] 100,
         Run Date "%a %b %_d %H:%M" "date" 600,
         Run DynNetwork [] 50,
+        Run Battery [
+          "-t", "<acstatus>: <left>% <timeleft>",
+        "--",
+        --"-c", "charge_full",
+        "-O", "AC",
+        "-o", "Bat",
+        "-h", "green",
+        "-l", "red"
+        ] 10,
         Run MPD ["-t",
                   "<artist>: <title> (<album>) <state>", -- <remaining>
                             "--", "-P", ">>", "-Z", "|", "-S", "><"] 30,
         Run StdinReader],
     sepChar = "%",
     alignSep = "}{",
-    template = "%StdinReader%  Playing: %mpd% }{ %multicpu% | %dynnetwork% | %memory% | <fc=#ee9a00>%date%</fc>"
+    template = "%StdinReader%  Playing: %mpd% }{ %multicpu% | %dynnetwork% | %memory% | %battery% | <fc=#ee9a00>%date%</fc>"
 }
 

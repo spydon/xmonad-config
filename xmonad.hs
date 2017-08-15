@@ -3,6 +3,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
+import XMonad.Actions.SpawnOn
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Gaps
 import XMonad.Util.Run(spawnPipe)
@@ -10,7 +11,7 @@ import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
 import XMonad.Util.EZConfig
 
-background = "feh --bg-fill ~/pictures/`ls ~/pictures | shuf -n 1`"
+background = "feh --bg-fill ~/Pictures/`ls ~/Pictures | shuf -n 1`"
 --myWorkspaces =    ["1:Browser", "2:Slack", "3:LaTeX", "4:IntelliJ"] 
 --               ++ ["5:Webstorm", "6:IRC", "7:Notes",  "8", "9",  "0"]
 
@@ -37,10 +38,10 @@ main = do
            , ((mod4Mask, xK_c), spawn "urxvt -e tty-clock")
            , ((mod4Mask, xK_v), spawn "urxvt -e sudo wifi-menu")
            , ((mod4Mask, xK_n), spawn "nautilus")
-           , ((mod4Mask, xK_f), spawn "firefox")
+           , ((mod4Mask, xK_f), spawnOn "1" "firefox")
            , ((mod4Mask, xK_s), spawn "sh ~/scripts/screen.sh")
-           , ((mod4Mask, xK_i), spawn "sh /home/spydon/bin/android-studio/bin/studio.sh")
-           , ((mod4Mask, xK_o), spawn "sh /home/spydon/bin/idea-IU-172.3317.76/bin/idea.sh")
+           , ((mod4Mask, xK_i), spawnOn "4" "sh /home/spydon/bin/android-studio/bin/studio.sh")
+           , ((mod4Mask, xK_o), spawnOn "6" "sh /home/spydon/bin/idea-IU-172.3317.76/bin/idea.sh")
            , ((mod4Mask, xK_F5), spawn "mpc previous")
            , ((mod4Mask, xK_F6), spawn "mpc next")
            , ((mod4Mask, xK_F7), spawn "mpc toggle")
