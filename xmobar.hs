@@ -3,7 +3,7 @@ Config {
     allDesktops = True,
     pickBroadest = True,   -- choose widest display (multi-monitor) 
     commands = [
-        Run MultiCpu       [ "--template" , "Cpu: <total0>% <total1>% <total2>% <total3>% <total4>% <total5>%"
+        Run MultiCpu       [ "--template" , "Cpu: <total0>% <total1>% <total2>% <total3>%"
                              , "--Low"      , "50"         -- units: %
                              , "--High"     , "85"         -- units: %
                              , "--low"      , "darkgreen"

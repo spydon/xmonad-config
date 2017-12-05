@@ -16,14 +16,14 @@ background = "feh --bg-fill ~/Pictures/`ls ~/Pictures | shuf -n 1`"
 --               ++ ["5:Webstorm", "6:IRC", "7:Notes",  "8", "9",  "0"]
 
 main = do
-  xmproc <- spawnPipe "~/.cabal/bin/xmobar ~/.xmonad/xmobar.hs"
+  xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar.hs"
   spawn background
 
   xmonad $ defaultConfig
     { terminal = "urxvt"
     , manageHook = manageDocks <+> manageHook defaultConfig
     , layoutHook = smartBorders . avoidStruts $ layoutHook defaultConfig
-    , normalBorderColor = "#000000"
+    , normalBorderColor = "#000080"
     , startupHook = setWMName "LG3D"
     , modMask = mod4Mask
     , handleEventHook    = handleEventHook defaultConfig <+> docksEventHook
@@ -33,15 +33,15 @@ main = do
                               }
     }
       `additionalKeys`
-           [ ((mod4Mask, xK_p), spawn "dmenu_run -fn 'Droid Sans Mono-12'")
+           [ ((mod4Mask, xK_p), spawn "mmenu_run -fn 'Droid Sans Mono-12'")
            , ((mod4Mask, xK_b), spawn background)
            , ((mod4Mask, xK_c), spawn "urxvt -e tty-clock")
            , ((mod4Mask, xK_v), spawn "urxvt -e sudo wifi-menu")
-           , ((mod4Mask, xK_n), spawn "nautilus")
-           , ((mod4Mask, xK_f), spawnOn "1" "firefox")
-           , ((mod4Mask, xK_s), spawn "sh ~/scripts/screen.sh")
-           , ((mod4Mask, xK_i), spawnOn "4" "sh /home/spydon/bin/android-studio/bin/studio.sh")
-           , ((mod4Mask, xK_o), spawnOn "6" "sh /home/spydon/bin/idea-IU-172.3317.76/bin/idea.sh")
+           , ((mod4Mask, xK_n), spawn "pcmanfm")
+           , ((mod4Mask, xK_f), spawn "firefox")
+           , ((mod4Mask, xK_z), spawn "sflock")
+           , ((mod4Mask, xK_s), spawn "slack")
+           , ((mod4Mask, xK_i), spawn "sh /home/spydon/bin/idea/bin/idea.sh")
            , ((mod4Mask, xK_F5), spawn "mpc previous")
            , ((mod4Mask, xK_F6), spawn "mpc next")
            , ((mod4Mask, xK_F7), spawn "mpc toggle")
