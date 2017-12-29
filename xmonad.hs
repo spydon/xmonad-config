@@ -4,6 +4,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
 import XMonad.Actions.SpawnOn
+import XMonad.Layout.Spacing
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Gaps
 import XMonad.Util.Run(spawnPipe)
@@ -45,7 +46,6 @@ main = do
            , ((mod4Mask, xK_F5), spawn "mpc previous")
            , ((mod4Mask, xK_F6), spawn "mpc next")
            , ((mod4Mask, xK_F7), spawn "mpc toggle")
-           , ((mod4Mask, xK_r), spawn "mpc clear | mpc listall | shuf -n 30 | mpc add; mpc play")
            , ((mod4Mask, xK_x), sendMessage ToggleStruts)
            , ((mod4Mask, xK_Up), spawn "xbacklight +10")
            , ((mod4Mask, xK_Down), spawn "xbacklight -10") ]

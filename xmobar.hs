@@ -28,6 +28,7 @@ Config {
         Run StdinReader],
     sepChar = "%",
     alignSep = "}{",
-    template = "%StdinReader%  Playing: %mpd% }{ %multicpu% | %dynnetwork% | %memory% | %battery% | <fc=#ee9a00>%date%</fc>"
+    template = "%StdinReader%  }{ %multicpu% | %dynnetwork% | %memory% | %battery% | <fc=#ee9a00>%date%</fc>"
+    --template = "%StdinReader%  Playing: %mpd% }{ %multicpu% | %dynnetwork% | %memory% | %battery% | <fc=#ee9a00>%date%</fc>"
 }
 
