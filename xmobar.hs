@@ -22,13 +22,14 @@ Config {
         "-h", "green",
         "-l", "red"
         ] 10,
+        Run Com "/home/spydon/scripts/bitcoin.sh" [] "bitcoin" 600,
         Run MPD ["-t",
                   "<artist>: <title> (<album>) <state>", -- <remaining>
                             "--", "-P", ">>", "-Z", "|", "-S", "><"] 30,
         Run StdinReader],
     sepChar = "%",
     alignSep = "}{",
-    template = "%StdinReader%  }{ %multicpu% | %dynnetwork% | %memory% | %battery% | <fc=#ee9a00>%date%</fc>"
+    template = "%StdinReader%  }{ %bitcoin% | %multicpu% | %dynnetwork% | %memory% | %battery% | <fc=#ee9a00>%date%</fc>"
     --template = "%StdinReader%  Playing: %mpd% }{ %multicpu% | %dynnetwork% | %memory% | %battery% | <fc=#ee9a00>%date%</fc>"
 }
 
